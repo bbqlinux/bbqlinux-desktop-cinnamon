@@ -1,7 +1,7 @@
 # Maintainer: Daniel Hillenbrand <codeworkx [at] bbqlinux [dot] org>
 
 pkgname=bbqlinux-desktop-cinnamon
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
 pkgdesc="BBQLinux CINNAMON Desktop"
 arch=('any')
@@ -26,10 +26,20 @@ depends=(
 
 # extras
 'blueberry'
+'cheese'
+'gedit'
 'gnome-keyring'
-
+'gnome-calculator'
+'gnome-screenshot'
+'gnome-terminal'
 )
 
 package() {
     cd "$pkgdir"
+    mkdir -p etc
+    mkdir -p usr/bin
+
+    install -Dm755 "$srcdir/usr/bin/bbqlinux-gsettings-cinnamon.sh" usr/bin/bbqlinux-gsettings-cinnamon.sh
+
+    cp -R "$srcdir/etc/skel" etc/skel
 }
