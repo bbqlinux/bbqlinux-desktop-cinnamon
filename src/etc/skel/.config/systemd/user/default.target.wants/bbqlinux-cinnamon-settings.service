@@ -1,0 +1,9 @@
+[Unit]
+Description=Apply BBQLinux specific CINNAMON settings
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bbqlinux-cinnamon-settings.sh
+
+[Install]
+WantedBy=default.target

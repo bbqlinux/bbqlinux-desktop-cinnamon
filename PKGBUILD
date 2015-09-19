@@ -1,7 +1,7 @@
 # Maintainer: Daniel Hillenbrand <codeworkx [at] bbqlinux [dot] org>
 
 pkgname=bbqlinux-desktop-cinnamon
-pkgver=1.0.2
+pkgver=1.0.3
 pkgrel=1
 pkgdesc="BBQLinux CINNAMON Desktop"
 arch=('any')
@@ -39,7 +39,7 @@ package() {
     mkdir -p etc
     mkdir -p usr/bin
 
-    install -Dm755 "$srcdir/usr/bin/bbqlinux-gsettings-cinnamon.sh" usr/bin/bbqlinux-gsettings-cinnamon.sh
+    install -Dm755 "$srcdir/usr/bin/bbqlinux-cinnamon-settings.sh" usr/bin/bbqlinux-cinnamon-settings.sh
 
     cp -R "$srcdir/etc/skel" etc/skel
 }
