@@ -1,7 +1,7 @@
 # Maintainer: Daniel Hillenbrand <codeworkx [at] bbqlinux [dot] org>
 
 pkgname=bbqlinux-desktop-cinnamon
-pkgver=1.0.3
+pkgver=1.0.4
 pkgrel=1
 pkgdesc="BBQLinux CINNAMON Desktop"
 arch=('any')
