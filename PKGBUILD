@@ -1,7 +1,7 @@
 # Maintainer: Daniel Hillenbrand <codeworkx [at] bbqlinux [dot] org>
 
 pkgname=bbqlinux-desktop-cinnamon
-pkgver=1.0.4
+pkgver=1.0.6
 pkgrel=1
 pkgdesc="BBQLinux CINNAMON Desktop"
 arch=('any')
@@ -31,15 +31,17 @@ depends=(
 'gnome-keyring'
 'gnome-calculator'
 'gnome-screenshot'
-'gnome-terminal'
+'mate-terminal'
+'nemo-fileroller'
 )
 
 package() {
     cd "$pkgdir"
-    mkdir -p etc
+
+    mkdir -p etc/systemd/user/default.target.wants
+    install -Dm644 "$srcdir/usr/lib/systemd/user/bbqlinux-cinnamon-settings.service" usr/lib/systemd/user/bbqlinux-cinnamon-settings.service
+    ln -s /usr/lib/systemd/user/bbqlinux-cinnamon-settings.service etc/systemd/user/default.target.wants/
+
     mkdir -p usr/bin
-
     install -Dm755 "$srcdir/usr/bin/bbqlinux-cinnamon-settings.sh" usr/bin/bbqlinux-cinnamon-settings.sh
-
-    cp -R "$srcdir/etc/skel" etc/skel
 }
