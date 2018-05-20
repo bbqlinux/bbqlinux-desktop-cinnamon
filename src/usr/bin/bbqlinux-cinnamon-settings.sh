@@ -24,17 +24,22 @@ then
 
     touch ~/.bbqlinux/.cinnamon-settings
     echo ${NEW_VERSION} > ~/.bbqlinux/.cinnamon-settings
-	echo "Done."
+    echo "Done."
 fi
 
 CURRENT_VERSION=$(cat ~/.bbqlinux/.cinnamon-settings)
-NEW_VERSION=20150916
+NEW_VERSION=20180520
 if [ ${CURRENT_VERSION} -lt ${NEW_VERSION} ]
 then
     echo "Upgrading from ${CURRENT_VERSION} to ${NEW_VERSION}"
 
+    # Set default terminal
+    gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/mate-terminal
+    gsettings set org.cinnamon.desktop.default-applications.terminal exec /usr/bin/mate-terminal
+    gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
+
     echo ${NEW_VERSION} > ~/.bbqlinux/.cinnamon-settings
-	echo "Done."
+    echo "Done."
 fi
 
 exit 0
