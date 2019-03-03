@@ -17,7 +17,7 @@ then
     dbus-launch gsettings set org.cinnamon.desktop.wm.preferences theme 'BBQLinux'
 
     # Set icon theme
-    dbus-launch gsettings set org.cinnamon.desktop.interface icon-theme 'gnome-carbonite'
+    dbus-launch gsettings set org.cinnamon.desktop.interface icon-theme 'Papirus'
 
     # Background
     dbus-launch gsettings set org.cinnamon.desktop.background picture-uri file:///usr/share/backgrounds/bbqlinux/bbqlinux_wallpaper_00.jpg
